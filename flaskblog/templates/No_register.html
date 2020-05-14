@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Not Booked</title>
+</head>
+
+<script>
+function myFunction() {
+  alert("Your Cab Hasn't been Booked Yet....Have Some Patience.");
+}
+</script>
+<style>
+    #log{
+        margin-left: 10%;
+        margin-top: 3%;
+    }
+</style>
+<!-- 
+<script>
+    $(document).ready(function(){
+    alert("gjgj");
+    });
+</script> -->
+    <body  onload="myFunction()" style="background-image: url(../static/images/Patience.jpg);background-repeat: no-repeat;background-size: cover">
+        <div id="log">
+            <a href="{{url_for('logout')}}" style="color: whitesmoke;" >Logout</a>
+        </div>
+    </body>
+</html>

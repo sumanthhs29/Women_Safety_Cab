@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+        <link href="https://media5.picsearch.com/is?0oL8Bjbzj2hIo8yOFrIe6hkpolJxyN5bPE1_giy0_lA&height=231" rel="icon" type="image/x-icon">
+    </head>
+    <style>
+
+    body{
+    background-image:url("https://codeinspiration.pro/wp-content/themes/theme_ci/img/ImageHero1.jpg");
+    }
+    .login{
+    display:None;
+    }
+
+    .driver_login{display:None;}
+    .login_check{
+    cursor:pointer
+    }
+
+    .driver_login_check{cursor:pointer;}
+
+    .signup_check{
+    cursor:pointer
+    }
+    .preloader{
+    width:100%;
+    height:100%;background-color:blue;
+    }
+</style>
+<body>
+<div class="spinner-grow text-warning" role="status">
+  <span class="sr-only">Loading...</span>
+</div>
+
+
+<div class="" id="cover" style="margin-top: 4%;">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-5" style="color:white">
+                <div class="card" style="background-color:rgba(0, 0, 0, 0.5);">
+                     <form method="POST" action="" style="padding:30px;" class="sign_up">
+            {{ form.hidden_tag() }}
+            <fieldset class="form-group">
+                <h3>Sign Up Now</h3>
+                <h6>Fill the form below to get instant access</h6><hr style="color:white;background-color:white">
+                <div class="form-group" style="margin-top:30px">
+
+
+                    {% if form.username.errors %}
+                        {{ form.username(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.username.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.username(class="form-control form-control-lg" , placeholder="username") }}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+
+                    {% if form.email.errors %}
+                        {{ form.email(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.email.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.email(class="form-control form-control-lg",placeholder="Email") }}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+
+                    {% if form.password.errors %}
+                        {{ form.password(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.password.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.password(class="form-control form-control-lg",placeholder="Password") }}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+
+                    {% if form.confirm_password.errors %}
+                        {{ form.confirm_password(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.confirm_password.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.confirm_password(class="form-control form-control-lg",placeholder="Confirm Password") }}
+                    {% endif %}
+                </div>
+            </fieldset>
+            <div class="form-group">
+                {{ form.submit(class="btn btn-warning form-control") }}
+            </div>
+                         <h6>
+                             By registering to our website using these form you agree to all our
+                             <a href="https://www.syrow.com/careers/">Terms and Conditions</a>
+                         </h6>
+                         <center><h6>Already a Member??  <span style="color:orange" class="login_check">Login</span></h6></center>
+                         <center><h6>Are You registered Driver??<a href="{{ url_for('driver_login')}}" style="color:orange"> Click Here</a></h6></center>
+        </form>
+
+                    <form method="POST" action="" style="padding:30px;" class="login" >
+            {{ form_l.hidden_tag() }}
+
+            <fieldset class="form-group">
+                <h3>Login</h3>
+                <h6>Fill the form below to get instant access</h6><hr style="color:white;background-color:white">
+                <div class="form-group" style="margin-top:30px">
+
+
+
+                    {% if form_l.email.errors %}
+                        {{ form_l.email(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form_l.email.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form_l.email(class="form-control form-control-lg",placeholder="Email") }}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+
+                    {% if form_l.password.errors %}
+                        {{ form_l.password(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form_l.password.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form_l.password(class="form-control form-control-lg",placeholder="Password") }}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+
+                    {{ form_l.remember() }}<span>    Remember Me</span>
+                </div>
+            </fieldset>
+            <div class="form-group">
+                {{ form_l.submit(class="btn btn-warning form-control") }}
+            </div>
+                        <center><h6>New To these Website??  <span style="color:orange" class="signup_check">Sign up</span></h6></center>
+<center><h6>Are You registered Driver??<a href="{{ url_for('driver_login')}}" style="color:orange"> Click Here</a></h6></center>        </form>
+
+
+
+
+                </div>
+            </div>
+            <div class="col-sm-7" style="color:white">
+                <div class="content" style="margin-top:100px;padding:50px">
+                <h2>Register To Our Website</h2>
+                <br>
+                <h5>We have been working very hard to create new version of the world.Let's buid that world together
+
+                </h5><br>
+                    <div class="contact" style="background-color:orange;width:100px;height:50px;border:1px solid orange">
+                        <center><p style="margin-top:10px;"><a href="https://www.syrow.com/contact-us/" style="color:white">Contact Us</a></p></center>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(window).on('load',function(){
+    $('.preloader').hide()
+    })
+    $('.login_check').click(function(){
+    $('.sign_up').hide()
+   // $('.driver_login').hide()
+    $('.login').fadeIn(3000)
+    })
+
+
+    $('.signup_check').click(function(){
+    $('.login').hide()
+    //$('.driver_login').hide()
+    $('.sign_up').fadeIn(3000)
+    })
+
+
+    /*$('.driver_login_check').click(function(){
+    $('.login').hide()
+    $('.sign_up').hide()
+    $('.driver_login').fadeIn(3000)
+    })*/
+</script>
+</body>
+
+</html>

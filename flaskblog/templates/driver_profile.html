@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+        <link rel="stylesheet" href="../static/css/animate.css">
+        <script src="../static/js/wow.min.js"></script>
+        <script>
+          new WOW().init();
+        </script>
+        <style>
+            #mai {            
+            float: left; 
+            width:15%;
+            margin-left: 41%;
+            margin-right: 25%;
+             /* The width is 20%, by default */
+        }
+        </style>
+        <title>DriverUI</title>
+    </head>
+
+    <body style="background-image: url(../static/images/bg2.jpg);background-repeat: no-repeat;background-size: cover">
+        <!-- "background-image: linear-gradient(to right, rgba(0, 119, 255, 0), rgb(0, 195, 255))" -->
+    <div class="container" style="margin-top: 20px">
+        <a href="{{url_for('logout')}}" style="color: whitesmoke;">Logout</a>
+            <div class="row" style="margin-top: 10%">
+                <div class="col-3"></div>
+                <div class="col-6">
+                    <div class="wow rotateIn" data-wow-delay=".5s">
+                        <div class="card-deck">
+                            <div class="card" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); background-color: rgb(248, 244, 191)" >
+                                <div class="card-body text-center">
+                                <p class="card-text">Customer Name: {{user.username}}</p>
+                                <p class="card-text">Email: {{user.email}}</p>
+                                <p class="card-text">Source: {{book_info.pickup}}</p>
+                                <p class="card-text">Destination: {{book_info.destination}}</p>
+                                <p class="card-text">Departure time: {{book_info.date}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3"></div>
+            </div>
+        </div>
+
+
+        <!-- <a href="{{url_for('face_prediction')}}"><button type="button" id="mai" class="btn btn-info btn-block" style="margin-top: 70px;text-align: center;">Reached pick-up Location??</button>
+        </a> -->
+        <a href="{{url_for('face_prediction')}}"><button class="button" id="mai" style="margin-top: 70px;text-align: center;">Reached pick-up Location??</button>
+        </a>
+        <style>
+                .button {
+                  background-color: rgb(248, 244, 191);
+                  border: none;
+                  color: black;
+                  padding: 16px 32px;
+                  text-align: center;
+                  font-size: 16px;
+                  margin: 4px 2px;
+                  opacity: 0.8;
+                  transition: 0.3s;
+                  display: inline-block;
+                  text-decoration: none;
+                  cursor: pointer;
+                }
+                
+                .button:hover {opacity: 1}
+                </style>
+    </body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+                        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+            <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+    <link href="https://media5.picsearch.com/is?0oL8Bjbzj2hIo8yOFrIe6hkpolJxyN5bPE1_giy0_lA&height=231" rel="icon" type="image/x-icon">
+    <link rel="stylesheet" href="../static/css/animate.css">
+    <script src="../static/js/wow.min.js"></script>
+    <script>
+      new WOW().init();
+    </script>
+    <style>
+        #mai {            
+            float: left; 
+            width:15%;
+            margin-left: 41%;
+            margin-right: 25%;
+             /* The width is 20%, by default */
+        }
+        #cen{
+            float: left;
+            width: 50%;
+            margin-left: 35%;
+            margin-top: 10%;
+            font-family: monospace;
+            color: aliceblue;
+        }
+    </style>
+
+    </head>
+    <body style="background-image: url(../static/images/bg2.jpg);background-repeat: no-repeat;background-size: cover">
+        <div style="margin-top: 2%;margin-left: 2%">
+            <a href="{{url_for('logout')}}" style="color: whitesmoke;" >Logout</a>
+        </div>
+        <div class="wow rotateIn" data-wow-delay=".5s">
+            <h1 id="cen">You have been Recognised as {{current_user.name}}</h1>
+        </div>
+    <!-- <a href="{{url_for('reached_destination')}}"><button type="button" class="btn btn-outline-primary">Reached Destination ?</button></a> -->
+    
+        <a href="{{url_for('reached_destination')}}"><button class="button" id="mai" style="margin-top: 70px;text-align: center;">Reached pick-up Location??</button>
+        </a>
+        <style>
+            .button {
+              background-color: rgb(124, 252, 134);
+              border: none;
+              color: black;
+              padding: 16px 32px;
+              text-align: center;
+              font-size: 16px;
+              margin: 4px 2px;
+              opacity: 0.8;
+              transition: 0.3s;
+              display: inline-block;
+              text-decoration: none;
+              cursor: pointer;
+            }
+            
+            .button:hover {opacity: 1}
+        </style>
+
+    </body>
+</html>

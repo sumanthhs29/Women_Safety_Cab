@@ -1,0 +1,461 @@
+html,
+body {
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    background-image: url("./images/11.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    color: #111111;
+    font-weight: 500px;
+}
+
+h1 {
+    font-size: 70px;
+}
+
+h2 {
+    font-size: 36px;
+}
+
+h3 {
+    font-size: 30px;
+}
+
+h4 {
+    font-size: 24px;
+}
+
+h5 {
+    font-size: 18px;
+}
+
+h6 {
+    font-size: 16px;
+}
+
+p {
+    font-size: 15px;
+    color: #fff;
+    line-height: 1.6;
+    font-weight: 500;
+}
+
+input:focus,
+select:focus,
+button:focus,
+textarea:focus {
+    outline: none;
+}
+
+a:hover,
+a:focus {
+    text-decoration: none;
+    outline: none;
+}
+
+ul,
+ol {
+    padding: 0;
+    margin: 0;
+}
+
+::-webkit-input-placeholder {
+    color: #fff;
+    font-style: italic;
+    text-transform: uppercase;
+}
+
+:-ms-input-placeholder {
+    color: #fff;
+    font-style: italic;
+    text-transform: uppercase;
+}
+
+::-ms-input-placeholder {
+    color: #fff;
+    font-style: italic;
+    text-transform: uppercase;
+}
+
+::placeholder {
+    color: #fff;
+    font-style: italic;
+    text-transform: uppercase;
+}
+
+
+/*---------------------
+  Helper CSS
+-----------------------*/
+
+.section-title h2 {
+    font-size: 30px;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-style: italic;
+}
+
+.set-bg {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+}
+
+.spad {
+    padding-top: 105px;
+    padding-bottom: 105px;
+}
+
+.text-white h1,
+.text-white h2,
+.text-white h3,
+.text-white h4,
+.text-white h5,
+.text-white h6,
+.text-white p,
+.text-white span,
+.text-white li,
+.text-white a {
+    color: #fff;
+}
+
+
+/*---------------------
+  Commom elements
+-----------------------*/
+
+
+/* buttons */
+
+.site-btn {
+    display: inline-block;
+    border: none;
+    font-size: 14px;
+    font-weight: 700;
+    font-style: italic;
+    min-width: 186px;
+    padding: 24px 30px;
+    border-radius: 0;
+    text-transform: uppercase;
+    color: #081624;
+    line-height: normal;
+    cursor: pointer;
+    text-align: center;
+    background: #fff;
+    position: relative;
+    z-index: 1;
+}
+
+.site-btn img {
+    position: relative;
+    left: 13px;
+    width: auto !important;
+    display: inline-block !important;
+}
+
+.site-btn:after,
+.site-btn:before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    left: 9px;
+    top: 10px;
+    background: #b01ba5;
+    z-index: -2;
+    -webkit-box-shadow: 0 0 9px 3px rgba(226, 30, 228, 0.24);
+    box-shadow: 0 0 9px 3px rgba(226, 30, 228, 0.24);
+}
+
+.site-btn:before {
+    left: 0;
+    top: 0;
+    background: #fff;
+    z-index: -1;
+}
+
+.site-btn:hover {
+    color: #081624;
+}
+
+
+/* Preloder */
+
+#preloder {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 999999;
+    background: #000;
+}
+
+.loader {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -13px;
+    margin-left: -13px;
+    border-radius: 60px;
+    animation: loader 0.8s linear infinite;
+    -webkit-animation: loader 0.8s linear infinite;
+}
+
+@keyframes loader {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+        border: 4px solid #f44336;
+        border-left-color: transparent;
+    }
+    50% {
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+        border: 4px solid #673ab7;
+        border-left-color: transparent;
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+        border: 4px solid #f44336;
+        border-left-color: transparent;
+    }
+}
+
+@-webkit-keyframes loader {
+    0% {
+        -webkit-transform: rotate(0deg);
+        border: 4px solid #f44336;
+        border-left-color: transparent;
+    }
+    50% {
+        -webkit-transform: rotate(180deg);
+        border: 4px solid #673ab7;
+        border-left-color: transparent;
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        border: 4px solid #f44336;
+        border-left-color: transparent;
+    }
+}
+
+
+/*------------------
+  Header section
+---------------------*/
+
+.header-section {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 99;
+    padding: 15px 15px 0;
+}
+
+.header-warp img {
+    width: 800px;
+    height: 800px;
+    margin-top: 10px;
+    margin-left: 300px;
+}
+
+.header-warp {
+    max-width: 1480px;
+    color: white;
+    font-size: 16px;
+    margin: 0 auto;
+    padding-right: 5px;
+}
+
+.header-social p,
+.footer-social p,
+.geme-social-share p {
+    display: inline-block;
+    color: #9190a5;
+    font-size: 16px;
+    padding-top: 4px;
+}
+
+.header-social a,
+.footer-social a,
+.geme-social-share a {
+    display: -ms-inline-flex;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    width: 32px;
+    height: 32px;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 12px;
+    margin-left: 13px;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.header-social a:hover,
+.footer-social a:hover,
+.geme-social-share a:hover {
+    background: #b01ba5;
+}
+
+.header-bar-warp {
+    background: #fff;
+    margin: 0;
+    padding: 20px 40px 10px 50px;
+    -webkit-box-shadow: 0 0 9px 3px rgba(226, 30, 228, 0.24);
+    box-shadow: 0 0 9px 3px rgba(226, 30, 228, 0.24);
+    opacity: .18;
+}
+
+.site-logo {
+    float: left;
+}
+
+.main-menu.user-panel {
+    float: right;
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    padding-top: 3px;
+    opacity: 1;
+}
+
+.user-panel a {
+    color: #fff;
+}
+
+.user-panel a:hover {
+    color: #b01ba5;
+}
+
+.main-menu {
+    list-style: none;
+    text-align: center;
+    padding-top: 3px;
+}
+
+.main-menu li {
+    display: inline-block;
+    position: relative;
+}
+
+.main-menu li a {
+    display: block;
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    margin-right: 40px;
+    padding-bottom: 28px;
+    position: relative;
+    padding-right: 20px;
+}
+
+.main-menu li a:after {
+    position: absolute;
+    content: "";
+    width: 20px;
+    height: 20px;
+    right: 0;
+    top: 1px;
+    background-image: url("./img/icons/arrow-down.png");
+    background-repeat: no-repeat;
+    background-position: right center;
+}
+
+.main-menu li a i {
+    color: #928d92;
+    margin-left: 5px;
+}
+
+.main-menu li a:hover {
+    color: #b01ba5;
+}
+
+.main-menu li a:hover:after {
+    background-image: url("./img/icons/arrow-down-color.png");
+}
+
+.main-menu li a:hover i {
+    color: #b01ba5;
+}
+
+.main-menu li:hover .sub-menu {
+    visibility: visible;
+    opacity: 1;
+    margin-top: 0;
+}
+
+.main-menu li:hover>a {
+    color: #b01ba5;
+}
+
+.main-menu li:hover>a:after {
+    background-image: url("./img/icons/arrow-down-color.png");
+}
+
+.main-menu li .sub-menu {
+    position: absolute;
+    list-style: none;
+    text-align: left;
+    width: 220px;
+    left: 0;
+    top: 100%;
+    padding: 20px 0;
+    visibility: hidden;
+    opacity: .5;
+    margin-top: 50px;
+    background: #fff;
+    z-index: 99;
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    transition: all 0.4s;
+    -webkit-box-shadow: 2px 7px 20px rgba(0, 0, 0, 0.4);
+    box-shadow: 2px 7px 20px rgba(0, 0, 0, 0.4);
+}
+
+.main-menu li .sub-menu li {
+    display: block;
+}
+
+.main-menu li .sub-menu li a {
+    display: block;
+    color: #000;
+    margin-right: 0;
+    padding: 8px 30px;
+}
+
+.main-menu li .sub-menu li a:after {
+    display: none;
+}
+
+.main-menu li .sub-menu li a:hover {
+    color: #b01ba5;
+}
+
+.slicknav_menu {
+    display: none;
+}

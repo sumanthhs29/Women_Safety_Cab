@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>  
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title> Login </title>
+        <link href="https://fonts.googleapis.com/css?family=Iceland&display=swap" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        
+    </head>
+
+    <style>
+    </style>
+<!-- 
+    <script>
+        $(document).ready(function(){
+            $("#val").hide();
+        });
+        function myFunction() {
+          alert("Text: " + $("#val").text());
+        }
+    </script>
+    <h1 id="val">{{message}}</h1> -->
+
+    <body onload="myFunction()" style="background-image: url(../static/images/bg2.jpg);background-repeat: no-repeat;background-size: cover">
+        <div style="margin-top: 2%;margin-left: 2%">
+            <a href="{{url_for('booking')}}" style="color: whitesmoke;" >Logout</a>
+        </div>
+        <h2 style="color: whitesmoke">{{message}}</h2>
+    </body>
+</html> 

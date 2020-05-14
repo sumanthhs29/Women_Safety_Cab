@@ -1,0 +1,675 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+<link href="https://media5.picsearch.com/is?0oL8Bjbzj2hIo8yOFrIe6hkpolJxyN5bPE1_giy0_lA&height=231" rel="icon" type="image/x-icon">
+</head>
+<style>
+
+    body{
+
+    background-image:url("https://codeinspiration.pro/wp-content/themes/theme_ci/img/ImageHero1.jpg");
+
+
+    }
+    .login{
+    display:None;
+    }
+
+    .login_check{
+    cursor:pointer
+    }
+
+    .signup_check{
+    cursor:pointer
+    }
+    .preloader{
+    width:100%;
+    height:100%;background-color:blue;
+    }
+    .navbar-center {
+    position: absolute;
+    left: 50%;
+    transform: translatex(-50%);
+}
+    .monospace {
+  font-family: "Lucida Console", Courier, monospace;
+}
+</style>
+<body>
+<div class="spinner-grow text-warning" role="status">
+  <span class="sr-only">Loading...</span>
+</div>
+
+<div class="" id="cover">
+
+
+        <marquee behavior="scroll" direction="left" style="margin-top:50px;color: Black;
+        font-family: cursive;"
+        id="contact"><h3><b>Be a blood donor,be a Hero-A real one</b></h3></marquee>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6" style="color:white">
+                <div class="card" style="background-color:rgba(0, 0, 0, 0.5);">
+                    <h4 style="padding:30px">Book anytime and anyplace
+				<br>We are here to help you reach your destination</h4><center>
+                    <img src="./static/images/map.png" width="350px" height="300px" style="padding:30px;"></center>
+			</div>
+                </div>
+            <div class="col-sm-6" style="color:white">
+                <div class="card" style="background-color:rgba(0, 0, 0, 0.5);">
+                    <form method="POST" action="" style="padding:30px;" class="sign_up">
+            {{ form.hidden_tag() }}
+            <fieldset class="form-group">
+                <h3>Fill The Form</h3>
+                <h6>Fill the form below to get instant access To Cabs</h6><hr style="color:white;background-color:white">
+                <div class="form-group" style="margin-top:30px">
+
+
+                    {% if form.pickup.errors %}
+                        {{ form.pickup(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.pickup.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.pickup(class="form-control form-control-lg" , placeholder="Pickup Place") }}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+
+                    {% if form.destination.errors %}
+                        {{ form.destination(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.destination.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.destination(class="form-control form-control-lg",placeholder="Destination Place") }}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+
+                    {% if form.date.errors %}
+                        {{ form.date(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.date.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.date(class="form-control form-control-lg",placeholder="Time(HH:MM)") }}
+                    {% endif %}
+                </div>
+
+            </fieldset>
+            <div class="form-group">
+                {{ form.submit(class="btn btn-warning form-control") }}
+            </div>
+                         <h6>
+                             Before Booking the cabs please read the documentation
+                             <a href="https://www.syrow.com/careers/">Terms and Conditions</a>
+                         </h6>
+
+        </form>
+
+
+			</div>
+                </div>
+
+
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(window).on('load',function(){
+    $('.preloader').hide()
+    })
+    $('.login_check').click(function(){
+    $('.sign_up').hide()
+    $('.login').fadeIn(3000)
+    })
+
+
+    $('.signup_check').click(function(){
+    $('.login').hide()
+    $('.sign_up').fadeIn(3000)
+    })
+</script>
+</body>
+
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Home</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+        <link rel="stylesheet" href="../static/css/animate.css">
+    </head>
+    <script src="../static/js/wow.min.js"></script>
+              <script>
+              new WOW().init();
+              </script>
+    <script>
+        $(document).ready(function(){
+            $("#book").hide();
+            $("#help").hide();
+            $("#drive").hide();
+
+            // $("#navbardrop").click(function(){
+            //     //$("#welcome").fadet0("slow",".4");
+            //     $("#welcome").css("background-color","rgb(179, 179, 174)");
+            //     $("#book").css("background-color","rgb(179, 179, 174)");
+            //     $("#help").css("background-color","rgb(179, 179, 174)");
+            // });
+
+            // $("#navbardrop").dblclick(function(){
+            //     //$("#bod").show();
+            //     $("#welcome").css("background-color","0");
+            //     $("#book").css("background-color","white");
+            //     $("#help").css("background-color","white");
+            // });
+
+            //Navbar
+            $("#drop1").mouseenter(function(){
+                $(this).css("background-color","red");
+            });
+            $("#drop1").mouseleave(function(){
+                $(this).css("background-color","rgb(56, 56, 56)");
+            });
+
+            $("#drop2").mouseenter(function(){
+                $(this).css("background-color","red");
+            });
+            $("#drop2").mouseleave(function(){
+                $(this).css("background-color","rgb(56, 56, 56)");
+            });
+
+            $("#drop3").mouseenter(function(){
+                $(this).css("background-color","red");
+            });
+            $("#drop3").mouseleave(function(){
+                $(this).css("background-color","rgb(56, 56, 56)");
+            });
+
+            $("#drop4").mouseenter(function(){
+                $(this).css("background-color","red");
+            });
+            $("#drop4").mouseleave(function(){
+                $(this).css("background-color","rgb(56, 56, 56)");
+            });
+
+            $("#drop5").mouseenter(function(){
+                $(this).css("background-color","red");
+            });
+            $("#drop5").mouseleave(function(){
+                $(this).css("background-color","rgb(56, 56, 56)");
+            });
+
+            // Show and Hide
+            $("#drop1").click(function(){
+                $("#welcome").fadeIn(1000);
+                $("#book").hide();
+                $("#help").hide();
+                $("#drive").hide();
+            });
+
+            $("#drop2").click(function(){
+                $("#welcome").hide();
+                $("#book").fadeIn(1000);
+                $("#help").hide();
+                $("#drive").hide();
+            });
+
+            $("#drop3").click(function(){
+                $("#welcome").hide();
+                $("#book").hide();
+                $("#help").hide();
+                $("#drive").fadeIn(1000);
+            });
+
+            $("#drop4").click(function(){
+                $("#welcome").hide();
+                $("#book").hide();
+                $("#help").fadeIn(1000);
+                $("#drive").hide();
+            });
+
+            // FAQ
+            $("#q1").click(function(){
+            $("#a1").slideToggle("slow");
+            });
+            $("#q2").click(function(){
+            $("#a2").slideToggle("slow");
+            });
+            $("#q3").click(function(){
+            $("#a3").slideToggle("slow");
+            });
+            $("#q4").click(function(){
+            $("#a4").slideToggle("slow");
+            });
+            $("#q5").click(function(){
+            $("#a5").slideToggle("slow");
+            });
+            $("#q6").click(function(){
+            $("#a6").slideToggle("slow");
+            });
+            $("#q7").click(function(){
+            $("#a7").slideToggle("slow");
+            });
+        });
+    </script>
+
+    <style>
+        #lef {
+            float:left;
+            width:30%;
+            /* The width is 20%, by default */
+        }
+        #mai {            
+            /* float: right; */
+            width:6%;
+            margin-left: auto;
+            margin-right: auto;
+            /* The width is 20%, by default */
+        }
+        #rig {
+            float:right;
+            width:10%; 
+        /* The width is 20%, by default */
+        }
+        /* @media screen and (max-width:800px) {
+            #lef  , #mai, #rig {width:100%;}
+        } */
+    </style>
+
+    <body id="bod">
+        <div class="container-fluid" style="background-color: rgb(134, 140, 160,0.23)">
+            <nav class="navbar navbar-expand-sm navbar-dark">
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown" id="lef">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown" style="color: black">
+                            <i class="fas fa-bars" style="color: black"></i>
+                        </a>
+                        <div class="dropdown-menu" style="background-color: rgb(56, 56, 56)">
+                            <button class="dropdown-item" href="#" style="color: white" id="drop1">Home</button>
+                            <button class="dropdown-item" href="#" style="color: white" id="drop2">Book A Cab</button>
+                            <button class="dropdown-item" href="#" style="color: white" id="drop3"><a href="{{url_for('check_driver')}}"
+                            style="color:white"
+                            >Driver Info</a></button>
+                            <button class="dropdown-item" href="#" style="color: white" id="drop5">Drive with Us</button>
+                            <button class="dropdown-item" href="#" style="color: white" id="drop4">Help</button>
+                        </div>
+                    </li>
+                </ul>
+                <img src="../static/images/icon.png" alt="logo" id="mai" >
+                <a class="navbar-brand" href="{{url_for('delete_booking')}}" style="color:black;text-align: right">Delete Booking</a>
+                <a class="navbar-brand" href="{{url_for('logout')}}" id="rig" style="color:black;text-align: right">Logout</a>
+            </nav>
+        </div>
+        <div class="container-fluid" id="welcome" style="background-image: url(../static/images/bg2.jpg);background-repeat: no-repeat;background-size: cover">
+            <div class="row">
+                <div class="col-1">
+                </div>
+                <div class="col-5">
+                    <h3 style="color: rgb(117, 150, 248);font-family: fantasy;margin-top: 200px;font-size: 40px">Safer,better quality
+                    <br>and a city at your<br>fingertips</h3>
+                    <p style="color: whitesmoke;font-size: 25px">The first ever cab to use AI.</p>
+                </div>
+                <!-- rgb(83, 82, 139) -->
+                <div class="col-6">
+                    <div class="wow bounceInRight" data-wow-delay=".5s">
+                        <img src="../static/images/driverIMG.jpeg" alt="" style="width:100%;height: 100%;margin-top: 60px;">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row" style="margin-top: 120px">
+                <div class="col-1"></div>
+                <div class="col-6">
+                    <div class="wow bounceInLeft" data-wow-delay=".5s">
+                        <img src="../static/images/safet.png" alt="" style="margin-top: 70px;width: 100%;height: 100%;" >
+                    </div>
+                    <!-- IMAGE -->
+                </div>
+                <div class="col-5">
+                    <h6 style="color: rgb(255, 187, 184)">WHY CHOOSE CABTIME?</h6>
+                    <h5>Your Safety is our priority</h5>
+                    <p style="color: white">So that you can get around worry-free, all our<br>
+                    journeys are geo-tracked and both riders and drivers<br>
+                    are identified before the journey.</p>
+                    <br>
+                    <h5>The higest quality standards</h5>
+                    <p style="color: white">Professional drivers,modern vehicles and the ability<br>
+                    to control your journey preferences via the app.At<br>
+                    last,you'll travel as you deserveto.</p>
+                    <h5>User friendly</h5>
+                    <p style="color: white">Neat design and quick responsiveness will ensure<br>
+                    that you have a flawless user experience.</p>
+                </div>
+            </div>
+
+            <div class="row" style="margin-top: 60px">
+                <div class="col-2"></div>
+                <div class="col-8">
+                    <h3 style="color: cadetblue">Your safety, our commitment</h3>
+                    <p style="color: white;font-size: 30px">We've created our service with safety in mind,<br>
+                        down to every last detail.</p>
+                </div>
+                <div class="col-2"></div>
+            </div>
+
+            <div class="row" style="margin-top: 60px">
+                <div class="col-2"></div>
+                <div class="col-3">
+                    <div class="wow bounceInUp" data-wow-delay="0.5s">
+                        <img src="../static/images/check.png" alt="logo" style="width: 80%;height: max-content">
+                    </div>
+                    <h5><br>Quality drivers</h5>
+                    <p style="color: white">We have the most rigorous driver<br>
+                    registration process in the market,so<br>
+                    that you always ride with the best.</p>
+                </div>
+                <div class="col-3">
+                    <div class="wow bounceInUp" data-wow-delay="0.5s">
+                        <img src="../static/images/star.jpg" alt="logo" style="width: 80%;height:fit-content;">
+                    </div>
+                    <h5><br>Flat rate system</h5>
+                    <p style="color: white">Cabtime offers flar rates with no<br>
+                    additional charges to its valuable<br>
+                    customers across the country.</p>
+                </div>
+                <div class="col-3">
+                    <div class="wow bounceInUp" data-wow-delay="0.5s">
+                        <img src="../static/images/com.jpg" alt="logo" style="width: 80%;height: auto;">
+                    </div>
+                    <h5>We're here for you</h5>
+                    <p style="color: white">Our customer careteam is here to<br>
+                    help you and answer any questions<br>
+                    you might have.</p>
+                </div>
+                <div class="col-1"></div>
+            </div>
+            <!-- <div class="wow bounceInLeft" data-wow-delay=".5s">
+              <h2 style="color: black">My name is Sumanth H S</h2>
+            </div> -->
+
+            <div class="row" style="margin-top: 150px;background-color: rgb(153, 153, 216);margin-top: 20px;height: 100px;border-top-left-radius: 200px">
+                <p style="margin-left: 100px;margin-top: 50px">© 2020 CabTime</p>
+            </div>
+
+        </div>
+
+        <div class="container-fluid" id="book" style="background-image: url(../static/images/bg3.jpg);background-repeat: no-repeat;background-size: cover">
+            <div class="row">
+                <div class="col-1">
+                </div>
+                <div class="col-11">
+                        <div class="spinner-grow text-warning" role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+
+                        <div class="" id="cover">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-sm-6" style="color:white">
+                                        <div class="card" style="width: 100%;background-color:rgba(0, 0, 0, 0.5);">
+                                            <h4 style="padding:10px;margin-top: 15px">Book anytime and anyplace
+                                            <br>We are here to help you reach your destination</h4>
+                                            <img src="../static/images/map.png" width="100%" height="100%" style="padding:30px;">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6" style="color:white">
+                                        <div class="card" style="background-color:rgba(0, 0, 0, 0.5);">
+                                           <form method="POST" action="" style="padding:30px;" class="sign_up">
+                                          {{ form.hidden_tag() }}
+                                          <fieldset class="form-group">
+                                              <h3>Fill The Form</h3>
+                                              <h6>Fill the form below to get instant access To Cabs</h6><hr style="color:white;background-color:white">
+                                              <div class="form-group" style="margin-top:30px">
+
+
+                                                  {% if form.pickup.errors %}
+                                                      {{ form.pickup(class="form-control form-control-lg is-invalid") }}
+                                                      <div class="invalid-feedback">
+                                                          {% for error in form.pickup.errors %}
+                                                              <span>{{ error }}</span>
+                                                          {% endfor %}
+                                                      </div>
+                                                  {% else %}
+                                                      {{ form.pickup(class="form-control form-control-lg" , placeholder="Pickup Place") }}
+                                                  {% endif %}
+                                              </div>
+                                              <div class="form-group">
+
+                                                  {% if form.destination.errors %}
+                                                      {{ form.destination(class="form-control form-control-lg is-invalid") }}
+                                                      <div class="invalid-feedback">
+                                                          {% for error in form.destination.errors %}
+                                                              <span>{{ error }}</span>
+                                                          {% endfor %}
+                                                      </div>
+                                                  {% else %}
+                                                      {{ form.destination(class="form-control form-control-lg",placeholder="Destination Place") }}
+                                                  {% endif %}
+                                              </div>
+                                              <div class="form-group">
+
+                                                  {% if form.date.errors %}
+                                                      {{ form.date(class="form-control form-control-lg is-invalid") }}
+                                                      <div class="invalid-feedback">
+                                                          {% for error in form.date.errors %}
+                                                              <span>{{ error }}</span>
+                                                          {% endfor %}
+                                                      </div>
+                                                  {% else %}
+                                                      {{ form.date(class="form-control form-control-lg",placeholder="Time(HH:MM)") }}
+                                                  {% endif %}
+                                              </div>
+
+                                          </fieldset>
+                                          <div class="form-group">
+                                              {{ form.submit(class="btn btn-warning form-control") }}
+                                          </div>
+                                                       <h6>
+                                                           Before Booking the cabs please read the documentation
+                                                           <a href="https://www.syrow.com/careers/">Terms and Conditions</a>
+                                                       </h6>
+
+                                      </form>
+
+
+                                          </div>
+                                              </div>
+
+
+                                      </div>
+                                  </div>
+                              </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid" id="help">
+            <div class="row">
+                <div class="col-1">
+                </div>
+                <div class="col-8">
+                    <h2 style="margin-left: 600px;margin-top: 20px;color: black">FAQ</h2>
+                    <h6 style="color: black" id="q1">1. Are there any cancellation charges?</h6>
+                    <p id="a1" style="color: cadetblue">We understand that plans do change. There are no charges for cancelling a trip upto 24hours in advance.</p>
+                    <h6 style="color: black" id="q2">2. Do you provide AC cars?</h6>
+                    <p id="a2" style="color: cadetblue">We provide both AC and non-AC cars.</p>
+                    <h6 style="color: black" id="q3">3. Do you provide self drive cars?</h6>
+                    <p id="a3" style="color: cadetblue">Sorry, we do not provide self-drive cars.</p>
+                    <h6 style="color: black" id="q4">4. How and when do I get the driver and cab details ?</h6>
+                    <p id="a4" style="color: cadetblue">We normally send you cab and driver information as soon as you book a cab.<br>
+                        This information is sent to you via email.</p>
+                    <h6 style="color: black" id="q5">5. What if my cab shows up late?</h6>
+                    <p id="a5" style="color: cadetblue">We are proud of our on-time performance but sometimes delays do happen.<br>
+                        We will make additional efforts to ensure that we're vigilant and ensure a safe & punctual transit for you.</p>
+                    <h6 style="color: black" id="q6">6. What if my taxi does not show up?</h6>
+                    <p id="a6" style="color: cadetblue">It is extremely rare to have a situation where the vehicle does not show up at the scheduled time. Such an event is generally the result of unavoidable circumstances like inordinate amount of traffic, heavy rains, traffic blockades or vehicular breakdowns to name a few.<br>
+                        In such situations, we usually are notified by the driver and taxi operator at their first opportunity. We in turn do our part in keeping the customer aware of the situation as soon as we find out.</p>
+                    <h6 style="color: black" id="q7">7. What if the cab breaks down during the journey?</h6>
+                    <p id="a7" style="color: cadetblue">All our taxi's are regularly inspected along over 30 different points.
+                        However, breakdowns cannot be anticipated and do happen. In those cases, we expediently arrange a backup cab to ensure that your travel plans continue uninterrupted and with the least possible delay.</p>
+                </div>
+                <div class="col-3"></div>
+            </div>
+            <div class="row" style="margin-top: 40px">
+                <div class="col-1"></div>
+                <div class="col-9">
+                    <h4 style="color: black">Contact Info</h4>
+                    <div class="div1">
+                        Phone No: +91 9113544329<br>
+                        Address: CabTime, SIT Main road,Tumkur<br>
+                        Mail: cabtime@gmail.com
+                    </div>
+                </div>
+                <div class="col-3"></div>
+            </div>
+        </div>
+
+        <div class="container-fluid" id="drive">
+            <div class="row">
+                <div class="col-2">
+                </div>
+                <div class="col-10">
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                </div>
+            </div>
+        </div>
+
+    </body>
+
+    <script type="text/javascript">
+        $(window).on('load',function(){
+        $('.preloader').hide()
+        })
+        $('.login_check').click(function(){
+        $('.sign_up').hide()
+        $('.login').fadeIn(3000)
+        })
+
+
+        $('.signup_check').click(function(){
+        $('.login').hide()
+        $('.sign_up').fadeIn(3000)
+        })
+    </script>
+<style>
+    h2{
+        color: white;
+    }
+    p{
+        color: white;
+    }
+    h5{
+        color: cadetblue;
+    }
+
+/* body{
+    background-image:url("https://codeinspiration.pro/wp-content/themes/theme_ci/img/ImageHero1.jpg");
+    } */
+
+    .login{
+    display:None;
+    }
+
+    .login_check{
+    cursor:pointer
+    }
+
+    .signup_check{
+    cursor:pointer
+    }
+    .preloader{
+    width:100%;
+    height:100%;background-color:blue;
+    }
+    .navbar-center {
+    position: absolute;
+    left: 50%;
+    transform: translatex(-50%);
+    }
+    .monospace {
+    font-family: "Lucida Console", Courier, monospace;
+    }
+
+    .div1 {
+    width: 350px;
+    padding: 10px;
+    height: 100px;
+    border: 1px solid blue;
+    box-sizing: border-box;
+    box-shadow: 10px 10px 5px grey;
+    }
+</style>
+
+<style>
+    #a1{
+        display: none;
+    }
+    #a2{
+        display: none;
+    }
+    #a3{
+        display: none;
+    }
+    #a4{
+        display: none;
+    }
+    #a5{
+        display: none;
+    }
+    #a6{
+        display: none;
+    }
+    #a7{
+        display: none;
+    }
+    /* .card{
+        width: 250px;
+        height: 300px;
+        background: white;
+        box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        border-radius: 10px;
+        margin: 10px 20px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgba(252, 244, 137, 0.932);
+        /* .info{
+            color: rgb(255, 255, 255);
+            font-size: 40px;
+        } */
+
+</style>
+
+<!-- <footer style="background-color: rgb(153, 153, 216);margin-top: 20px;height: 200px;border-left: 200px">
+    <p style="text-align: center">© 2020 CabTime</p>
+</footer> -->
+
+</html>
